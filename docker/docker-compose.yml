@@ -9,7 +9,7 @@ services:
     environment:
       MYSQL_HOST: es_database
       MYSQL_USER: engelsystem
-      MYSQL_PASSWORD: engelsystem
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: engelsystem
     #ports:
     #  - "5080:80"
