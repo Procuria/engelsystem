@@ -13,7 +13,7 @@ services:
       MYSQL_DATABASE: engelsystem
     #ports:
     #  - "5080:80"
-    env_file: deployment.env
+    env_file: .env
     depends_on:
       - es_database
   es_database:
