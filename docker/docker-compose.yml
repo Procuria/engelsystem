@@ -11,16 +11,13 @@ services:
       MYSQL_USER: engelsystem
       MYSQL_PASSWORD: engelsystem
       MYSQL_DATABASE: engelsystem
-    ports:
-      - "5080:80"
+    #ports:
+    #  - "5080:80"
     env_file: deployment.env
-    networks:
-      - database
-      - internet
     depends_on:
       - es_database
   es_database:
-    image: mariadb:10.2
+    image: mariadb
     environment:
       MYSQL_DATABASE: engelsystem
       MYSQL_USER: engelsystem
@@ -29,12 +26,4 @@ services:
       MYSQL_INITDB_SKIP_TZINFO: "yes"
     volumes:
       - db:/var/lib/mysql
-    networks:
-      - database
-volumes:
-  db: {}
 
-networks:
-  database:
-    internal: true
-  internet:
